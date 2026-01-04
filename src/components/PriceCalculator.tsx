@@ -98,6 +98,25 @@ export default function PriceCalculator() {
                 padding: '0 12px'
               }}
             />
+            <div 
+              className="mt-3 p-5 rounded-lg border-l-4 shadow-sm"
+              style={{ 
+                backgroundColor: '#fafaea', 
+                borderLeftColor: '#b8b09f',
+                border: '1px solid #e0e0d0'
+              }}
+            >
+              <div className="flex items-center mb-2">
+                <span className="text-lg mr-2">💡</span>
+                <h4 className="font-bold text-sm" style={{ color: '#6d5f4c' }}>Dica para você</h4>
+              </div>
+              <p className="text-xs mb-3" style={{ color: '#6d5f4c', paddingLeft: '8px' }}>Como calcular seu valor por hora:</p>
+              <div className="text-xs" style={{ color: '#6d5f4c', lineHeight: '1.4', paddingLeft: '16px' }}>
+                <p className="mb-2">1️⃣ Meta mensal: R$ 1.500,00</p>
+                <p className="mb-2">2️⃣ Horas trabalhadas: 5h/dia × 22 dias = 110h</p>
+                <p className="font-medium">3️⃣ Valor/hora: R$ 1.500 ÷ 110h = <span style={{ color: '#b8b09f' }}>R$ 13,64</span></p>
+              </div>
+            </div>
           </div>
 
           <div>
@@ -118,6 +137,26 @@ export default function PriceCalculator() {
                 padding: '0 12px'
               }}
             />
+            <div 
+              className="mt-3 p-5 rounded-lg border-l-4 shadow-sm"
+              style={{ 
+                backgroundColor: '#fafaea', 
+                borderLeftColor: '#b8b09f',
+                border: '1px solid #e0e0d0'
+              }}
+            >
+              <div className="flex items-center mb-2">
+                <span className="text-lg mr-2">💡</span>
+                <h4 className="font-bold text-sm" style={{ color: '#6d5f4c' }}>Dica para você</h4>
+              </div>
+              <p className="text-xs mb-3" style={{ color: '#6d5f4c', paddingLeft: '8px' }}>Para que serve a margem de lucro:</p>
+              <div className="text-xs" style={{ color: '#6d5f4c', lineHeight: '1.4', paddingLeft: '16px' }}>
+                <p className="mb-2">💰 É o dinheiro que sobra para você depois de pagar tudo</p>
+                <p className="mb-2">🏠 Ajuda a pagar suas contas pessoais e investir no negócio</p>
+                <p className="mb-2">🔹 Recomendado: 30% a 50% sobre o custo total</p>
+                <p className="font-medium">Exemplo: R$ 150,00 + 35% = <span style={{ color: '#b8b09f' }}>R$ 202,50</span></p>
+              </div>
+            </div>
           </div>
 
           <button
