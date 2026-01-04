@@ -1,4 +1,5 @@
 import type { Link } from '../types'
+import { trackLinkClick } from '../utils/analytics'
 
 interface LinkCardProps {
   link: Link
@@ -7,6 +8,8 @@ interface LinkCardProps {
 
 export default function LinkCard({ link, onLinkClick }: LinkCardProps) {
   const handleClick = () => {
+    // Rastrear clique no link
+    trackLinkClick(link.title, link.url)
     onLinkClick(link)
   }
 

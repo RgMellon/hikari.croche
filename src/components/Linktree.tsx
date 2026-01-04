@@ -2,7 +2,8 @@ import type { Profile, Link } from '../types'
 import Header from './Header'
 import LinkList from './LinkList'
 import PriceCalculator from './PriceCalculator'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { initGA, trackPageView } from '../utils/analytics'
 
 interface LinktreeProps {
   profile: Profile
@@ -11,6 +12,13 @@ interface LinktreeProps {
 
 export default function Linktree({ profile, links }: LinktreeProps) {
   const [showCalculator, setShowCalculator] = useState(false)
+
+  useEffect(() => {
+    // Inicializar Google Analytics
+    initGA()
+    // Rastrear visualização da página
+    trackPageView()
+  }, [])
 
   const handleLinkClick = (link: Link) => {
     if (link.url === '#calculator') {
