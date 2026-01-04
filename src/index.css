@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #fafaea 0%, #f5f5e5 50%, #f0f0e0 100%);
+}
+input::placeholder {
+  color: #9c9484;
+  opacity: 0.6;
+}
+input {
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .link-card-text {
+    font-size: 15px !important;
+  }
+  .link-card-icon {
+    font-size: 15px !important;
+  }
+}
