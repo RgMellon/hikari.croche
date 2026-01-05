@@ -3,8 +3,8 @@ const GA_MEASUREMENT_ID = "G-FM93BCRY1K";
 
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
-    dataLayer: any[];
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
   }
 }
 
@@ -19,8 +19,8 @@ export const initGA = () => {
 
     // Configurar gtag
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function () {
-      window.dataLayer.push(arguments);
+    window.gtag = function (...args: unknown[]) {
+      window.dataLayer.push(args);
     };
     window.gtag("js", new Date());
     window.gtag("config", GA_MEASUREMENT_ID);

@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import Linktree from "./components/Linktree";
 import type { Profile, Link } from "./types";
 
@@ -41,7 +42,12 @@ const links: Link[] = [
 ];
 
 function App() {
-  return <Linktree profile={profile} links={links} />;
+  return (
+    <>
+      <Linktree profile={profile} links={links} />
+      <Analytics />
+    </>
+  );
 }
 
 export default App;
