@@ -14,7 +14,7 @@ const products: Product[] = [
     id: '1',
     title: 'PDF Receita Bolsinha de Crochê - Hikari Crochê',
     description: 'Receita completa e detalhada da bolsinha de crochê em PDF, desenvolvida para carregar celular e pequenos objetos do dia a dia. O material inclui passo a passo descritivo acompanhado de imagens explicativas, facilitando o entendimento e a execução da peça, mesmo para quem está aprimorando suas habilidades no crochê.',
-    image: 'https://i.imgur.com/4OiFY3J.png',
+    image: 'https://i.imgur.com/CaEIlya.png',
     downloadUrl: 'https://pay.kiwify.com.br/vaZ0nS0'
   }
 ]
