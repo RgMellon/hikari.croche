@@ -43,3 +43,21 @@ input {
     font-size: 16px !important;
   }
 }
+/* Grid responsivo para produtos */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+/* Botão produto responsivo */
+@media (max-width: 768px) {
+  .product-button {
+    font-size: 20px !important;
+  }
+}

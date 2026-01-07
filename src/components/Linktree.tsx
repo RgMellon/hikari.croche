@@ -2,6 +2,7 @@ import type { Profile, Link } from '../types'
 import Header from './Header'
 import LinkList from './LinkList'
 import PriceCalculator from './PriceCalculator'
+import RecipesPage from '../pages/RecipesPage'
 import { useState, useEffect } from 'react'
 import { initGA, trackPageView } from '../utils/analytics'
 
@@ -12,6 +13,7 @@ interface LinktreeProps {
 
 export default function Linktree({ profile, links }: LinktreeProps) {
   const [showCalculator, setShowCalculator] = useState(false)
+  const [showRecipes, setShowRecipes] = useState(false)
 
   useEffect(() => {
     // Inicializar Google Analytics
@@ -23,9 +25,24 @@ export default function Linktree({ profile, links }: LinktreeProps) {
   const handleLinkClick = (link: Link) => {
     if (link.url === '#calculator') {
       setShowCalculator(true)
+      setShowRecipes(false)
+      return
+    }
+    if (link.url === 'https://example.com/receitas') {
+      setShowRecipes(true)
+      setShowCalculator(false)
       return
     }
     window.open(link.url, '_blank')
+  }
+
+  const handleBack = () => {
+    setShowCalculator(false)
+    setShowRecipes(false)
+  }
+
+  if (showRecipes) {
+    return <RecipesPage profile={profile} onBack={handleBack} />
   }
 
   return (
@@ -45,7 +62,7 @@ export default function Linktree({ profile, links }: LinktreeProps) {
           ) : (
             <>
               <button
-                onClick={() => setShowCalculator(false)}
+                onClick={handleBack}
                 className="mb-6 transition-all duration-300 transform hover:-translate-y-1 active:scale-95"
                 style={{
                   backgroundColor: '#6d5f4c',

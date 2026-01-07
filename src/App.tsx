@@ -9,6 +9,12 @@ const profile: Profile = {
 
 const links: Link[] = [
   {
+    id: "0",
+    title: "Receitas em PDF",
+    url: "https://example.com/receitas",
+    icon: "📄",
+  },
+  {
     id: "1",
     title: "Instagram",
     url: "https://www.instagram.com/hikari.croche/",
