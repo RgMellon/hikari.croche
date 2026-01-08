@@ -27,13 +27,31 @@ export const initGA = () => {
   }
 };
 
+// Rastrear clique no botão QUERO
+export const trackProductClick = (productTitle: string, productUrl: string) => {
+  if (typeof window !== "undefined" && window.gtag) {
+    // Evento personalizado seguindo padrões GA4
+    window.gtag("event", "product_click", {
+      product_name: productTitle,
+      product_url: productUrl,
+      event_category: "ecommerce",
+      event_label: "QUERO_button"
+    });
+  }
+
+  // Fallback: localStorage para métricas locais
+  const clicks = JSON.parse(localStorage.getItem("productClicks") || "{}");
+  clicks[productTitle] = (clicks[productTitle] || 0) + 1;
+  localStorage.setItem("productClicks", JSON.stringify(clicks));
+};
+
 // Rastrear clique em link
 export const trackLinkClick = (linkTitle: string, linkUrl: string) => {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", "click", {
       event_category: "Link",
       event_label: linkTitle,
-      value: linkUrl,
+      link_url: linkUrl,
     });
   }
 

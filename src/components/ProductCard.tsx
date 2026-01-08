@@ -1,5 +1,5 @@
 import type { Product } from '../types/product'
-import { trackLinkClick } from '../utils/analytics'
+import { trackProductClick } from '../utils/analytics'
 
 interface ProductCardProps {
   product: Product
@@ -7,8 +7,8 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const handleDownload = () => {
-    // Rastrear clique no botão QUERO
-    trackLinkClick(`QUERO - ${product.title}`, product.downloadUrl)
+    // Rastrear clique no botão QUERO com evento específico
+    trackProductClick(product.title, product.downloadUrl)
     window.open(product.downloadUrl, '_blank')
   }
 
